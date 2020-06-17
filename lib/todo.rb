@@ -12,7 +12,7 @@ class Todo
     if action == 'add'
       @list << task
     elsif action == 'done'
-      @list.delete(task)
+      @list.shift()
     end
     @list.each_with_index { |item, i|
       items = items + "#{i + 1} #{item}\n"

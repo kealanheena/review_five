@@ -43,7 +43,7 @@ describe Todo do
     context 'Removing Items' do
       it 'should remove dishes when you enter "done dishes"' do
         subject.alter('add dishes')
-        expect(subject.alter('done dishes')).to eq ''
+        expect(subject.alter('done 1')).to eq ''
       end
     end
   end
