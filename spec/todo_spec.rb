@@ -34,6 +34,17 @@ describe Todo do
       it 'should add two word items like cook dinner' do
         expect(subject.alter('add cook dinner')).to eq "1 cook dinner\n"
       end
+
+      it 'should add two word items like wash car' do
+        expect(subject.alter('add wash car')).to eq "1 wash car\n"
+      end
+    end
+
+    context 'Removing Items' do
+      it 'should remove dishes when you enter "done dishes"' do
+        subject.alter('add dishes')
+        expect(subject.alter('done dishes')).to eq ''
+      end
     end
   end
 end
