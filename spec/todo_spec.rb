@@ -45,6 +45,19 @@ describe Todo do
         subject.alter('add dishes')
         expect(subject.alter('done 1')).to eq ''
       end
+
+      it 'should remove dishes when you enter "done dishes"' do
+        subject.alter('add dishes')
+        subject.alter('add wash')
+        expect(subject.alter('done 2')).to eq "1 dishes\n"
+      end
+
+      it 'should remove dishes when you enter "done dishes"' do
+        subject.alter('add dishes')
+        subject.alter('add wash')
+        subject.alter('add test')        
+        expect(subject.alter('done 2')).to eq "1 dishes\n2 test\n"
+      end
     end
   end
 end
