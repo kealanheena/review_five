@@ -1,5 +1,6 @@
 class Todo
   def alter(string)
-    '1 test'
+    task = string.split(" ")[1]
+    "1 #{task}"
   end
 end
