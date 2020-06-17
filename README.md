@@ -1,10 +1,12 @@
-# Review Four
+# Review Five
 
 
 
 ## Challenge
 
-
+input => output
+1 dishes
+2 laundry
 
 ## User Stories
 
