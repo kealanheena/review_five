@@ -6,7 +6,9 @@ class Todo
 
   def alter(string)
     items = ''
-    task = string.split(" ")[1]
+    item_array = string.split(" ")
+    item_array.shift()
+    task = item_array.join(' ')
     @list << task
     @list.each_with_index { |item, i|
       items = items + "#{i + 1} #{item}\n"

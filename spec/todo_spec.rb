@@ -17,10 +17,22 @@ describe Todo do
         expect(subject.alter('add laundry')).to eq "1 laundry\n"
       end
     end
+
     context 'adding multiple items' do
       it 'should list the items in numeric order' do
         subject.alter('add test')
         expect(subject.alter('add dishes')).to eq "1 test\n2 dishes\n"
+      end
+
+      it 'should list the items in numeric order' do
+        subject.alter('add laundry')
+        expect(subject.alter('add cooking')).to eq "1 laundry\n2 cooking\n"
+      end
+    end
+
+    context 'adding two word items' do
+      it 'should add two word items like cook dinner' do
+        expect(subject.alter('add cook dinner')).to eq "1 cook dinner\n"
       end
     end
   end
