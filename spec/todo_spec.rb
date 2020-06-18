@@ -13,18 +13,18 @@ describe Todo do
         expect(subject.alter('add dishes')).to eq "1 dishes\n"
       end
 
-      it 'adds dishes to list' do
+      it 'adds laundry to list' do
         expect(subject.alter('add laundry')).to eq "1 laundry\n"
       end
     end
 
     context 'adding multiple items' do
-      it 'should list the items in numeric order' do
+      it 'should list the test & dishes in numeric order' do
         subject.alter('add test')
         expect(subject.alter('add dishes')).to eq "1 test\n2 dishes\n"
       end
 
-      it 'should list the items in numeric order' do
+      it 'should list the laundry & cooking in numeric order' do
         subject.alter('add laundry')
         expect(subject.alter('add cooking')).to eq "1 laundry\n2 cooking\n"
       end
@@ -41,18 +41,18 @@ describe Todo do
     end
 
     context 'Removing Items' do
-      it 'should remove dishes when you enter "done dishes"' do
+      it 'should remove dishes when you enter "done 1"' do
         subject.alter('add dishes')
         expect(subject.alter('done 1')).to eq ''
       end
 
-      it 'should remove dishes when you enter "done dishes"' do
+      it 'should remove wash when you enter "done 2"' do
         subject.alter('add dishes')
         subject.alter('add wash')
         expect(subject.alter('done 2')).to eq "1 dishes\n"
       end
 
-      it 'should remove dishes when you enter "done dishes"' do
+      it 'should remove dishes when you enter "done 2"' do
         subject.alter('add dishes')
         subject.alter('add wash')
         subject.alter('add test')        

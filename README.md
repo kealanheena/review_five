@@ -57,7 +57,9 @@ You can Remove an item
 
 This app is used in the terminal:
 
+This app is used in the terminal:
 
+You can run it in IRB and create an instance of Todo and then pass it a command in the form of a string, e.g. "add cook dinner", it will then return a string with a number followed by the item you added, e.g. "1 cook dinner". You can also remove the item by passing it remove an the index, e.g. "remove 1". doing this will remove the item from the todo.
 
 ## Running The Tests
 
@@ -66,7 +68,22 @@ You can run tests by running rspec in the terminal in the review_five directory.
 ### Test Coverage
 
 #### Unit Tests
-
+ - Alter
+ - adding one item
+    - adds an item
+    - adds dishes to list
+    - adds laundry to list
+  - adding multiple items
+    - should list the test & dishes in numeric order
+    - should list the laundry & cooking in numeric order
+  - adding two word items
+    - should add two word items like cook dinner
+    - should add two word items like wash car
+  - Removing Items
+    - should remove dishes when you enter "done 1"
+    - should remove dishes when you enter "done 2"
+    - should remove dishes when you enter "done 2" 
+  
 
 
 ## Versioning
