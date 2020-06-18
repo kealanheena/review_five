@@ -5,17 +5,13 @@ class Todo
   end
 
   def alter(command)
-    items = ''
     info = get_info(command)
     if info[:action] == 'add'
       add(info[:task])
     elsif info[:action] == 'done'
       remove(info[:task])
     end
-    @list.each_with_index { |item, i|
-      items = items + "#{i + 1} #{item}\n"
-    }
-    items
+    format_list
   end
 
   private
@@ -31,9 +27,15 @@ class Todo
 
   def get_info(command)
     command_array = command.split(" ")
-    info = {
-      action: command_array.shift(),
-      task: command_array.join(' ')
+    { action: command_array.shift(),
+      task: command_array.join(' ') }
+  end
+
+  def format_list
+    formatted_list = ''
+    @list.each_with_index { |item, i|
+      formatted_list += "#{i + 1} #{item}\n"
     }
+    formatted_list
   end
 end
