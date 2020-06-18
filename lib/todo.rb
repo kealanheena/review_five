@@ -6,15 +6,19 @@ class Todo
 
   def alter(command)
     info = get_info(command)
+    perform_task(info)
+    format_list
+  end
+
+  private
+
+  def perform_task(info)
     if info[:action] == 'add'
       add(info[:task])
     elsif info[:action] == 'done'
       remove(info[:task])
     end
-    format_list
   end
-
-  private
 
   def add(item)
     @list << item
